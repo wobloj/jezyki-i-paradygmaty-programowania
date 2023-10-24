@@ -1,0 +1,91 @@
+% c:/Users/w65555/Desktop/prolog.pl compiled 0.00 sec, 12 clauses
+?- lubi(ala,koty).
+true.
+
+?- lubi(ala,psy).
+false.
+
+?- lubi(ala, X).
+X = koty .
+
+?- lubi(ala, X).
+X = koty ;
+X = tomka.
+
+?- mezczyzna(X).
+X = jan ;
+X = tomek ;
+X = zbigniew.
+
+?- lubi(ala,koty), lubi(marek,psy).
+true.
+
+?- lubi(ala,koty); lubi(marek,psy).
+true 
+
+?- lubi(ala,koty); lubi(marek,koty).
+true ;
+false.
+
+?- 
+% c:/Users/w65555/Desktop/prolog.pl compiled 0.00 sec, 0 clauses
+% c:/Users/w65555/Desktop/prolog.pl compiled 0.00 sec, 1 clauses
+?- kogoLubi(ala,X).
+X = ala ;
+X = jan ;
+X = alina.
+
+?- 
+% c:/Users/w65555/Desktop/prolog.pl compiled 0.00 sec, 1 clauses
+?- kogoLubi1(ala,X).
+false.
+
+?- 
+% c:/Users/w65555/Desktop/prolog.pl compiled 0.00 sec, 1 clauses
+?- kogoLubi1(ala,X).
+X = marek.
+
+Przykład 1
+
+% c:/Users/w65555/Desktop/rodzina.pl compiled 0.00 sec, 1 clauses
+?- rodzic(zofia, marcin).
+true.
+
+?- 
+% c:/Users/w65555/Desktop/rodzina.pl compiled 0.00 sec, 5 clauses
+?- rodzic(marcin, krzys).
+true.
+
+?- rodzic(andrzej, mikolaj).
+false.
+
+?- rodzic(X, marcin).
+X = zofia ;
+X = andrzej.
+
+?- rodzic(Y, mikołaj), rodzic(X,Y)
+|        .
+false.
+
+?- rodzic(Y, mikołaj), rodzic(X,Y).
+false.
+
+?- rodzic(Y, mikolaj), rodzic(X,Y).
+Y = krzys,
+X = marcin.
+
+?- rodzic(andrzej,X),rodzic(X,Y).
+X = marcin,
+Y = ania ;
+X = marcin,
+Y = krzys ;
+false.
+
+?- rodzic(X,annia), rodzic(X, krzys).
+false.
+
+?- rodzic(X,ania), rodzic(X, krzys).
+X = marcin.
+
+?- potomek(marcin, zofia).
+true .
